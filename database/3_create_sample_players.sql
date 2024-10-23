@@ -1,3 +1,5 @@
+-- Apply this script over database created in step 1
+
 INSERT INTO player(playerId, firstName, lastName, email, balance) VALUES
 (1, 'Vojislav', 'Depalov', 'vojislav.depalov@gmail.com', 100),
 (2, 'John', 'Doe', 'john.doe@gmail.com', 150),

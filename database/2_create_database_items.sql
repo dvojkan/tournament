@@ -1,3 +1,6 @@
+-- Apply this script over database created in step 1
+
+
 -- clear the database and set it up for new deployment
 DROP TABLE IF EXISTS player_tournament;
 
@@ -76,6 +79,8 @@ CREATE TABLE tournament_settlement
     CONSTRAINT pk_tournamentSettlement PRIMARY KEY (tournamentId,playerId)
 );
 
+ALTER TABLE tournament_settlement ADD CONSTRAINT fk_ts_player_playerId FOREIGN KEY (playerId) REFERENCES player(playerId);
+ALTER TABLE tournament_settlement ADD CONSTRAINT fk_ts_tournament_tournamentId FOREIGN KEY (tournamentId) REFERENCES tournament(tournamentId);
 
 -- create stored procedure for tournament settlement
 
